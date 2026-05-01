@@ -1,0 +1,1 @@
+Pasta criada para fazer atividade de conteinerização Python por Docker
