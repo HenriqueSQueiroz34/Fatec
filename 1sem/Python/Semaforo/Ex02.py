@@ -10,39 +10,36 @@ from time import sleep as sl
 from random import randint as rand
 import multiprocessing as mult
 
-pessoa:int
 andar:int
-porta:int
 sema = None
 
-def init(s,pe,a,po):
-    global sema,pessoa,andar,porta
+def init(s,a,po):
+    global sema,andar,porta
     sema = s
-    pessoa = pe
     andar = a
     porta = po
 
 def proc(id):
-    global sema,pessoa,andar,porta
+    global sema,andar,porta
     andado:int = 0
 
     while(andar.value >= andado):
-        andado += pessoa.value 
-        print('Pessoa #',id,'Andou',pessoa,'m')
+        pessoa = rand(4,6)
+        andado += pessoa
+        print('Pessoa #',id,'Andou',pessoa,'m. Faltam',andar.value-andado,'m')
         sl(0.2)
 
         if (andar.value <= andado):
             with sema:
                 print('Pessoa #',id,'passando na porta')
                 sl(porta.value)
-                print('Porta livre')
                 print('Pessoa #',id,'passou pela porta')
+                print('Porta livre')
 
 def main():
-    global pessoa,andar, porta
+    global andar, porta
     ordem:int = [0]*4
     sema = None
-    pessoa = mult.Value('i',rand(4,6))
     andar = mult.Value('i',200)
     porta = mult.Value('i',rand(1,2))
 
@@ -51,7 +48,7 @@ def main():
 
     with mult.Manager() as man:
         sema = man.Semaphore(1)
-        with mult.Pool(processes=4,initargs=init,initializer=(sema,pessoa,andar,porta)) as pool:
+        with mult.Pool(processes=4,initializer=init,initargs=(sema,andar,porta)) as pool:
             pool.map(proc,ordem)
     
     print('Todos passaram')
