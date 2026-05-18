@@ -47,7 +47,5 @@ def main():
         with mulp.Pool(processes=5,initializer=init,initargs=(sema,posic)) as pool:
             pool.starmap(corrida,carSapo)
 
-
-
 if __name__ == "__main__":
     main()
