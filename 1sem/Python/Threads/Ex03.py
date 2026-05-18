@@ -1,6 +1,3 @@
-# 0 a 5 cm por pulo
-# 5 sapos
-# 1 metro
 import time
 import multiprocessing as mulp
 import random as ram
