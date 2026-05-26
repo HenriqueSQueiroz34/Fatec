@@ -2,6 +2,7 @@
 n:.asciiz"\nDigite o termo final da fórmula: "
 erro:.asciiz"\nInválido.Repita!\n"
 res:.asciiz"\nResultado final: "
+pula:.asciiz"\n"
 .text
 
 # lista de vars:
@@ -18,22 +19,21 @@ li $v0,5
 syscall
 move $t1,$v0
 blez $t1,err
-li $t0,1
 
 enquanto: # definir o somador
 rem $t2,$t1,2
 beq $t2,0,par
-li $t2,2
+li $t2,1
 	continua: # calculando
-	add $t3,$t1,$t2
-	mul $t0,$t0,$t3
+	mul $t3,$t1,$t2
+	add $t0,$t0,$t3
 	sub $t1,$t1,1
 	
 bge $t1,1,enquanto
 j fim
 
 par:
-li $t2,1
+li $t2,2
 j continua
 
 err:
