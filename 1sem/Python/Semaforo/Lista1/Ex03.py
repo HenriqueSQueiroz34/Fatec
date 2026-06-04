@@ -18,14 +18,13 @@ def corrida(sapo,fez,falta):
         salto:int = ram.randint(1,5)
 
         fez += salto
-        percurso = fez - falta
 
-        if (percurso >= 0):
+        if (fez - falta >= 0):
             with sema:
                 print('Sapo #',sapo,'chegou em',posic.value,'º lugar')
                 posic.value = posic.value + 1
         else:
-            print('Sapo #',sapo,'Pulou',salto,'cm. Faltam', percurso*(-1))
+            print('Sapo #',sapo,'Pulou',salto,'cm. Faltam', falta - fez)
         time.sleep(0.2)
 
 def main():
