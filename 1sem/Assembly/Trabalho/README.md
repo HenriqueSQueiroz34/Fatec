@@ -1,0 +1,1 @@
+Entrar com o número de termos da série (n), (n > 0 e, caso não seja, deve ser novamente solicitado), e imprimir o valor de H, sendo: H = 1+2*2+1*3+2*4+1*5+2*6+... Observção: cada multiplicação é um termo. Entender a série é fundamental para a resolução do problema.
