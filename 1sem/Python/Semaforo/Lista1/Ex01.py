@@ -9,7 +9,6 @@ andado: int
 def carregar(s,a):
     global semaforo
     global andado
-    global cont
     semaforo = s
     andado = a
 
@@ -41,7 +40,7 @@ def main():
 
     with multiprocessing.Manager() as manager:
         sem = manager.Semaphore(1)
-        with multiprocessing.Pool(processes=4,initializer=carregar,initargs=(sem,andado,cont)) as pool:
+        with multiprocessing.Pool(processes=4,initializer=carregar,initargs=(sem,andado)) as pool:
             pool.map(thread,params)
 
     print('Todos os carros passaram!!')
