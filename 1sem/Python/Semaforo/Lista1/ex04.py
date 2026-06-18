@@ -1,8 +1,3 @@
-# serão 5 carros por pista, tendo 7 equipes
-# cada equipe tem 2 carros (14 no total)
-# o piloto na pista deve dar 3 voltas e o tempo de cada uma será mostrado
-# o piloto que não entrou ficará em espera
-
 import multiprocessing as mulp
 from time import sleep
 from random import randint

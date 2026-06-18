@@ -1,11 +1,3 @@
-'''
-# 4 pessoas em 200m para 1 porta
-
-randoms
-- passos 4 a 6
-- abrir porta 1 a 2
-'''
-
 from time import sleep as sl
 from random import randint as rand
 import multiprocessing as mult
