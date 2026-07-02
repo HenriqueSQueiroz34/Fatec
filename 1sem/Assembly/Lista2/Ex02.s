@@ -1,23 +1,39 @@
 .data
-raio:.asciiz"Insira o raio da circunferência: "
-res:.asciiz"O comprimento é "
+pri:.asciiz"Qual o primeiro valor: "
+seg:.asciiz"E o segundo: "
+troca:.asciiz"Trocando fica "
+es:.asciiz" e "
 .text
 
-Main: 
+main:
 
 li $v0,4
-la $a0,raio
+la $a0,pri
 syscall
 li $v0,5
 syscall
-move $t1,$v0
-
-add $t2,$t2,6
-mul $t0,$t2,$t1
+add $t0,$v0,$zero
 
 li $v0,4
-la $a0, res
+la $a0,seg
+syscall
+li $v0,5
+syscall
+add $t1,$v0,$zero
+
+add $t2,$t0,$zero
+add $t0,$t1,$zero
+add $t1,$t2,$zero
+
+li $v0,4
+la $a0,troca
 syscall
 li $v0,1
-move $a0,$t0
-syscall 
+add $a0,$t0,$zero
+syscall
+li $v0,4
+la $a0,es
+syscall
+li $v0,1
+add $a0,$t1,$zero
+syscall

@@ -1,59 +1,59 @@
 .data
-n1:.asciiz"Digite o primeiro numero: "
-n2:.asciiz"Digite o segundo numero: "
-res:.asciiz"A soma dos impares entre os dois fica "
+r1:.asciiz"Informe a raiz 1: "
+r2:.asciiz"Qual a raiz 2: "
+r3:.asciiz"E a raiz 3: "
+u:.asciiz"UMA RAÍZ REAL"
+d:.asciiz"DUAS RAÍZES REAIS"
+n:.asciiz"NÃO EXISTEM RAÍZES REAIS"
 .text
 
 main:
-
 li $v0,4
-la $a0,n1
+la $a0,r1
 syscall
 li $v0,5
 syscall
-move $t1,$v0
+la $t1,($v0)
 
 li $v0,4
-la $a0,n2
+la $a0,r2
 syscall
 li $v0,5
 syscall
-move $t2,$v0
+la $t2,($v0)
 
-bgt $t1,$t2,maior
+li $v0,4
+la $a0,r3
+syscall
+li $v0,5
+syscall
+la $t3,($v0)
 
-resto:
+mul $t2,$t2,$t2
+mul $t3,$t3,$t1
+mul $t3,$t3,4
+sub $t0,$t2,$t3
 
-rem $t3,$t1,2
-beq $t3,0,par
+bgtz $t0,duas
+beqz $t0,uma
+bltz $t0,nenhuma
 
-# laço de repetição
-somas:
-
-add $t3,$t1,$zero
-add $t0,$t0,$t3
-add $t1,$t1,2
-
-bgt $t2,$t1,somas
+duas:
+li $v0,4
+la $a0,d
+syscall
 j fim
 
-par:
+uma:
+li $v0,4
+la $a0,u
+syscall
+j fim
 
-addi $t1,$t1,1
-j somas
-
-# invertendo valores
-maior:
-move $t3,$t1
-move $t1,$t2
-move $t2,$t3
-j resto
+nenhuma:
+li $v0,4
+la $a0,n
+syscall
+j fim
 
 fim:
-
-li $v0,4
-la $a0,res
-syscall
-li $v0,1
-move $a0,$t0
-syscall

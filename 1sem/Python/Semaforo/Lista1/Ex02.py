@@ -26,7 +26,7 @@ def proc(id):
             with sema:
                 print('Pessoa #',id,'passando na porta')
                 sl(porta.value)
-                print('Pessoa #',id,'passou pela porta em',porta.value,'s')
+                print('Pessoa #',id,'passou pela porta em',porta.value,'segs') 
                 print('Porta livre')
 
 def main():

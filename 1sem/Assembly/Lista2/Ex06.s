@@ -1,76 +1,44 @@
 .data
-n1:.asciiz"Digite um numeral ("
-n2:.asciiz"): "
-mai:.asciiz"Maior: "
-men:.asciiz"Menor: "
-nega:.asciiz"Numeral negativo, tente novamente.\n"
-pula:.asciiz"\n"
+n1:.asciiz"Digite o valor 1: "
+n2:.asciiz"Digite o valor 2: "
+ma:.asciiz"O maior é "
+me:.asciiz" e o menor é "
 .text
 
 main:
 
-# input com contador
 li $v0,4
 la $a0,n1
 syscall
-addi $t7,$t7,1
-li $v0,1
-move $a0,$t7
+li $v0,5
 syscall
+la $t0,($v0)
+
 li $v0,4
 la $a0,n2
 syscall
-
-#recebendo o valor
 li $v0,5
 syscall
-move $t0,$v0
+la $t1,($v0)
 
-blt $t0,0,invalido
-
-beq $t7,1,primeiro
-
-bgt $t0,$t1,maior
-blt $t0,$t2,menor
-
-blt $t7,10,main
+bgt $t1,$t0,maior
 j fim
 
-invalido:
-sub $t7,$t7,1
-li $v0,4
-la $a0,nega
-syscall
-j main
-
-primeiro:
-move $t1,$t0
-move $t2,$t0
-j main
-
 maior:
-move $t1,$t0
-j main
-
-menor:
-move $t2,$t0
-j main
+la $t2,($t0)
+la $t0,($t1)
+la $t1,($t2)
 
 fim:
 li $v0,4
-la $a0,mai
+la $a0,ma
 syscall
 li $v0,1
-move $a0,$t1
+add $a0,$t0,$zero
 syscall
-
 li $v0,4
-la $a0,pula
-syscall
-
-li $v0,4
-la $a0,men
+la $a0,me
 syscall
 li $v0,1
-move $a0,$t2
+add $a0,$t1,$zero
 syscall
