@@ -24,5 +24,7 @@ public class Ex05 {
         } else {
             System.out.println("1 raíz real.");
         }
+        
+        s.close();
     }
 }

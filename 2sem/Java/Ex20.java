@@ -18,9 +18,6 @@ public class Ex20 {
         
         delta = (b*b) - (4 * a * c);
         
-        // temp
-        System.out.print(delta);
-        
         if (delta > 0){
             System.out.println("2 raízes distintas reais:");
         } else if (delta < 0) {

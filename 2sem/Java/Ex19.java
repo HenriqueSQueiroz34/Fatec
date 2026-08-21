@@ -24,5 +24,7 @@ public class Ex19 {
         } else {
             System.out.println("Os valores são iguais");
         }
+        
+        s.close();
     }
 }
