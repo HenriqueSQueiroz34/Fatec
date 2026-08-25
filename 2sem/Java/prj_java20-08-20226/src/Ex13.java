@@ -1,14 +1,10 @@
-import java.util.Scanner;
+import javax.swing.JOptionPane;
 public class Ex13 {
     public static void main(String args[]) {
-        Scanner s;
-        s = new Scanner(System.in);
-        
         float q;
         
         do {
-            System.out.print("Quantos kg tem de alimento? ");
-            q = s.nextFloat();
+            q = Integer.parseInt(JOptionPane.showInputDialog("Quantos kg tem de alimento? "));
         } while (q <= 0);
         
         q *= 1000; // kg -> g
@@ -17,9 +13,8 @@ public class Ex13 {
             q -= 50;
             
             if (q < 50){
-                System.out.print("Dias de alimento: " + d);
+                JOptionPane.showMessageDialog(null, "Dias de alimento: "+ d);
             }
         }
-        s.close();
     }
 }
