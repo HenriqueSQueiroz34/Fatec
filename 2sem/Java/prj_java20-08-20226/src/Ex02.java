@@ -7,6 +7,6 @@ public class Ex02 {
         sal = Double.parseDouble(JOptionPane.showInputDialog("Dê o salário do funcionário: R$ "));
         } while (sal <= 0);
         
-        JOptionPane.showMessageDialog(null, "Salário Reajustado: R$ " + sal*1.15);
+        JOptionPane.showMessageDialog(null, "Salário Reajustado: R$ " + (sal + sal*0.15));
     }
 }

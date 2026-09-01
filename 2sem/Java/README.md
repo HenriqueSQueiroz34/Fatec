@@ -1,4 +1,6 @@
 Lista 1  
+
+prj_java20-08-2026-
    
  Ex1.java Coletar o valor do lado de um quadrado, calcular sua área e apresentar o resultado.  
    
@@ -34,10 +36,10 @@ Lista 1
    
  Ex17.java Calcule a quantidade de litros gastos em uma viagem, sabendo que o automóvel faz 12 km/l. Receber o tempo de percurso e a velocidade média.  
    
- Estruturas de Decisões  
-   
  Ex18.java Receba 2 valores inteiros. Calcule e mostre o resultado da diferença do maior pelo menos valor.  
    
  Ex19.java Receba 2 valores reais. Calcule e mostre o maior deles.  
    
  Ex20.java Receba 3 coeficientes A, B, e C de uma equação do 2º grau da fórmula AX²+BX+C=0. Verifique e mostre a existência de raízes reais e se caso exista, calcule e mostre.  
+
+prj_java27-08-2026

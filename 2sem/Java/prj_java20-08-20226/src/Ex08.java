@@ -7,6 +7,6 @@ public class Ex08 {
             val = Float.parseFloat(JOptionPane.showInputDialog("Qual o valor investido? R$ "));
         } while (val <= 0);
         
-        JOptionPane.showMessageDialog(null, "Valor após este mês: R$ " + val*1.013);
+        JOptionPane.showMessageDialog(null, "Valor após este mês: R$ " + (val + val*0.013));
     }
 }
