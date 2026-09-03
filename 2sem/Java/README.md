@@ -1,6 +1,11 @@
-Lista 1  
+Lista 1
 
-prj_java20-08-2026-
+Localização dos arquivos:
+- prj_java20-08-2026: 1 a 20
+- prj_java27-08-2026: 21 a 45 (sem 30)
+- prj_java03-09-2026: Modularização das Atividades
+
+Enunciados:
    
  Ex1.java Coletar o valor do lado de um quadrado, calcular sua área e apresentar o resultado.  
    
@@ -42,4 +47,52 @@ prj_java20-08-2026-
    
  Ex20.java Receba 3 coeficientes A, B, e C de uma equação do 2º grau da fórmula AX²+BX+C=0. Verifique e mostre a existência de raízes reais e se caso exista, calcule e mostre.  
 
-prj_java27-08-2026
+ Ex21.java 
+
+ Ex22.java 
+
+ Ex23.java 
+
+ Ex24.java
+
+ Ex25.java 
+
+ Ex26.java 
+
+ Ex27.java 
+
+ Ex28.java 
+
+ Ex29.java 
+
+ Ex30.java 
+
+ Ex31.java 
+
+ Ex32.java 
+
+ Ex33.java 
+
+ Ex34.java 
+
+ Ex35.java 
+
+ Ex36.java 
+
+ Ex37.java 
+
+ Ex38.java 
+
+ Ex39.java 
+
+ Ex40.java
+
+ Ex41.java 
+
+ Ex42.java 
+
+ Ex43.java 
+
+ Ex44.java 
+
+ Ex45.java 
