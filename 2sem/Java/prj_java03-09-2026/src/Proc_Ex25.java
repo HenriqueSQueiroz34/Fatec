@@ -1,7 +1,8 @@
-import javax.swing.*;
-public class Ex25 {
+import javax.swing.JOptionPane;
+public class Proc_Ex25 {
+    static int cmin,chr,fmin,fhr;
+    
     public static void main (String args[]){
-        int cmin,chr,fmin,fhr;
         do {
             chr = Integer.parseInt(JOptionPane.showInputDialog("Hora de início do jogo: "));
             cmin = Integer.parseInt(JOptionPane.showInputDialog("Dê os minutos de início do jogo: "));
@@ -12,16 +13,20 @@ public class Ex25 {
         int jhr = fhr-chr;
         int jmin = fmin-fmin;
         
-        if (jhr < 0){ jhr += 24;}
-        if (jmin < 0){
-            jhr -=1;
-            jmin += 60;
+        Jogo(jhr,jmin);
+    }
+    
+    static void Jogo(int h, int m){
+        if (h <= 0){ h += 24;}
+        if (m < 0){
+            h -=1;
+            m += 60;
         }
         
-        if (jhr >= 24 && jmin > 0){
-            System.out.print("O jogo não pode acontecer por passar de 24 horas. "+jhr+":"+jmin);
+        if (h >= 24 && m > 0){
+            System.out.println("O jogo não pode acontecer por passar de 24 horas. "+h+":"+m);
         } else {
-            System.out.print("O jogo vai durar "+jhr+":"+jmin);
+            System.out.println("O jogo vai durar "+h+":"+m);
         }
     }
 }

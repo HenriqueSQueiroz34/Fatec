@@ -12,10 +12,10 @@ public class Ex40 {
         
         System.out.println("Primos entre "+a+" e "+b);
         
-        for (int n=a; n<b+1; n++){
+        for (int n=a+1; n < b; n++){
             if (n > 1){
-                for (int i=2; n < n/2+1; i++){
-                    if (n%i==0){}
+                for (int i=2; n < (n/2)+1; i++){
+                    if (n%i==0){break;}
                 }
             } else {
                 System.out.println(n);
