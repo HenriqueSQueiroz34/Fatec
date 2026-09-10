@@ -47,52 +47,63 @@ Enunciados:
    
  Ex20.java Receba 3 coeficientes A, B, e C de uma equação do 2º grau da fórmula AX²+BX+C=0. Verifique e mostre a existência de raízes reais e se caso exista, calcule e mostre.  
 
- Ex21.java 
+ Ex21.java Receba 4 notas bimestrais de um aluno. Calcule e mostre a média aritmética.Mostre a mensagem de acordo com a média:
+    a.	Se a média for >= 6,0 exibir “APROVADO”;
+    b.	Se a média for >= 3,0 E < 6,0 exibir “EXAME”;
+    c.	Se a média for < 3,0 exibir “RETIDO”.
 
- Ex22.java 
+ Ex22.java Receba 2 valores inteiros e diferentes. Mostre seus valores em ordem crescente.
 
- Ex23.java 
+ Ex23.java Receba 3 valores obrigatoriamente em ordem crescente e um 4º valor não necessariamente em ordem. Mostre os 4 números em ordem crescente.
 
- Ex24.java
+ Ex24.java Receba um valor inteiro. Verifique e mostre se é divisível por 2 e 3.
 
- Ex25.java 
+ Ex25.java Receba a hora de início e de final de um jogo (HH,MM), calcular o tempo do jogo em horas e minutos, sabendo que o tempo máximo é menor que 24 horas e pode começar num dia e terminar no utro.
 
- Ex26.java 
+ Ex26.java Receba 2 números inteiros. Verifique e mostre se o maior número é múltiplo do menor.
 
- Ex27.java 
+ Ex27.java Receba o número de voltas, a extensão do circuito (em metros) e o tempo de duração (minutos). Calcule e mostre a velocidade média em km/h.
 
- Ex28.java 
+ Ex28.java Receba o preço atual e a média mensal de um produto. Calcule e mostre o novo preço sabendo que:
+    Venda Mensal     Preço Atual  Preço   Novo
+        < 500           < 30       +       10%
+    >= 500 e < 1000 >= 30 e < 80   +       15%
+        >= 1000         >= 80      -       5%
 
- Ex29.java 
+    Obs.: para outras condições, preço novo será igual ao preço atual.
 
- Ex30.java 
+ Ex29.java Receba o tipo de investimento (1 = poupança e 2 = renda fixa) e o valor do investimento. Calcule e mostre o valor corrigido em 30 dias sabendo que a poupança = 3% e a renda fixa = 5%. Demais tipos não serão considerados.
 
- Ex31.java 
+ Ex30.java Receba a data de nascimento e atual em ano, mês e dia. Calcule e mostre a idade em anos, meses e dias, considerando os anos bissextos.
 
- Ex32.java 
+ Ex31.java Calcule e mostre o quadrado dos números entre 10 e 150.
 
- Ex33.java 
+ Ex32.java Receba um número inteiro. Calcule e mostre o seu fatorial.
 
- Ex34.java 
+ Ex33.java Receba um número. Calcule e mostre a série 1 + 1/2 + 1/3 + ... + 1/N.
 
- Ex35.java 
+ Ex34.java Receba um número. Calcule e mostre os resultados da tabuada desse número.
 
- Ex36.java 
+ Ex35.java Receba 2 números inteiros, verifique qual o maior entre eles. Calcule e mostre o resultado da somatória dos números ímpares entre esses valores.
 
- Ex37.java 
+ Ex36.java Receba um número N. Calcule e mostre a série 1 + 1/1! + 1/2! + ... + 1/N!
 
- Ex38.java 
+ Ex37.java Receba um número inteiro. Calcule e mostre a série de Fibonacci até o seu N’nésimo termo.
 
- Ex39.java 
+ Ex38.java Receba 100 números inteiros reais. Verifique e mostre o maior e o menor valor. Obs.: somente valores positivos.
 
- Ex40.java
+ Ex39.java Calcule a quantidade de grãos contidos em um tabuleiro de xadrez onde:
+    Casa: 1 2 3 4 ... 64
+    Qdte: 1 2 4 8 ... N
 
- Ex41.java 
+ Ex40.java Receba 2 números inteiros. Verifique e mostre todos os números primos existentes entre eles.
 
- Ex42.java 
+ Ex41.java Mostre todas as possibilidades de 2 dados de forma que a soma tenha como resultado 7.
 
- Ex43.java 
+ Ex42.java Calcule e mostre a série 1 + 2/3 + 3/5 + ... + 50/99.
 
- Ex44.java 
+ Ex43.java Calcule e mostre quantos anos serão necessários para que Ana seja maior que Maria sabendo que Ana tem 1,10 m e cresce 3 cm ao ano e Maria tem 1,5 m e cresce 2 cm ao ano.
 
- Ex45.java 
+ Ex44.java Receba o número da base e do expoente. Calcule e mostre o valor da potência.
+
+ Ex45.java 45.	Calcule e mostre a série 1 – 2/4 + 3/9 – 4/16 + 5/25 + ... + 15/225.
