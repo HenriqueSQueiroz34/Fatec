@@ -9,6 +9,17 @@ public class Ex06 {
             v[i] = Integer.parseInt(JOptionPane.showInputDialog("Informe o termo "+i+": "));
         }
         
+        Sort(v);
+        
+        System.out.println("Ordenando: ");
+        for (int i=0;i<20;i++){
+            System.out.print(v[i]+ " ");
+        }
+    }
+    
+    static void Sort (int v[]){
+        int len = v.length;
+        int mai;
         for (int a=1;a<len;a++){
             for (int i=0;i<a;i++){
                 if (v[i]>v[a]){
@@ -17,11 +28,6 @@ public class Ex06 {
                     v[a] = mai;
                 }
             }
-        }
-        
-        System.out.println("Ordenando: ");
-        for (int i=0;i<20;i++){
-            System.out.print(v[i]+ " ");
         }
     }
 }
