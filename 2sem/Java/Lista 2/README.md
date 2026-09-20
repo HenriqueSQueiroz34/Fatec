@@ -1,3 +1,9 @@
+Lista 2
+
+Localização dos arquivos:
+-prj_java10-09-2026: 1 a 7
+-prj_java17-09-2026: 8 a 12
+
 Ex01.py Criar e coletar um vetor [50] inteiro. Calcular e exibir:
         a. A média dos valores entre 10 e 200;
         b. A soma dos números ímpares.
