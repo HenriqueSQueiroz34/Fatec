@@ -7,14 +7,14 @@
  *
  * @author henrique
  */
-public class Ex01 extends javax.swing.JFrame {
+public class NewJFrame extends javax.swing.JFrame {
     
-    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(Ex01.class.getName());
+    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(NewJFrame.class.getName());
 
     /**
-     * Creates new form Ex01
+     * Creates new form NewJFrame
      */
-    public Ex01() {
+    public NewJFrame() {
         initComponents();
     }
 
@@ -27,6 +27,11 @@ public class Ex01 extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jButton1 = new javax.swing.JButton();
+        txtR1 = new javax.swing.JTextField();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        txtR2 = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         txtA = new javax.swing.JTextField();
@@ -35,13 +40,22 @@ public class Ex01 extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         txtC = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        txtR1 = new javax.swing.JTextField();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        txtR2 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jButton1.setText("Calcular");
+        jButton1.addActionListener(this::jButton1ActionPerformed);
+
+        txtR1.setText("???");
+        txtR1.setEnabled(false);
+
+        jLabel6.setText("Raíz 1:");
+
+        jLabel7.setText("Raíz 2:");
+
+        txtR2.setText("???");
+        txtR2.setEnabled(false);
+        txtR2.addActionListener(this::txtR2ActionPerformed);
 
         jLabel1.setFont(new java.awt.Font("Inter", 0, 18)); // NOI18N
         jLabel1.setText("Raízes de bhaskara");
@@ -60,20 +74,6 @@ public class Ex01 extends javax.swing.JFrame {
 
         jLabel5.setFont(new java.awt.Font("Inter", 1, 18)); // NOI18N
         jLabel5.setText("Ax²+Bx+C");
-
-        jButton1.setText("Calcular");
-        jButton1.addActionListener(this::jButton1ActionPerformed);
-
-        txtR1.setText("???");
-        txtR1.setEnabled(false);
-
-        jLabel6.setText("Raíz 1:");
-
-        jLabel7.setText("Raíz 2:");
-
-        txtR2.setText("???");
-        txtR2.setEnabled(false);
-        txtR2.addActionListener(this::txtR2ActionPerformed);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -111,7 +111,7 @@ public class Ex01 extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(145, 145, 145)
                         .addComponent(jButton1)))
-                .addContainerGap(32, Short.MAX_VALUE))
+                .addContainerGap(18, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -141,7 +141,7 @@ public class Ex01 extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
                     .addComponent(txtR2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(9, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -152,12 +152,12 @@ public class Ex01 extends javax.swing.JFrame {
         int A = Integer.parseInt(txtA.getText());
         int B = Integer.parseInt(txtB.getText());
         int C = Integer.parseInt(txtC.getText());
-        
+
         float delta = (B*B) - 4 * A * C;
-        
+
         float r1 = (float) ((-1) * B + delta) / (2 * A);
         float r2 = (float) ((-1) * B - delta) / (2 * A);
-        
+
         if (delta > 0){
             txtR1.setText(String.valueOf(r1));
             txtR2.setText(String.valueOf(r2));
@@ -170,7 +170,7 @@ public class Ex01 extends javax.swing.JFrame {
                 txtR2.setText("Sem raíz real");
             }
         }
-        
+
         // Limpando
         txtA.setText("");
         txtB.setText("");
@@ -203,7 +203,7 @@ public class Ex01 extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> new Ex01().setVisible(true));
+        java.awt.EventQueue.invokeLater(() -> new NewJFrame().setVisible(true));
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

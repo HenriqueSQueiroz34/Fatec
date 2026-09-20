@@ -7,14 +7,14 @@
  *
  * @author henrique
  */
-public class Ex03 extends javax.swing.JFrame {
+public class NewJFrame extends javax.swing.JFrame {
     
-    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(Ex03.class.getName());
+    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(NewJFrame.class.getName());
 
     /**
-     * Creates new form Ex01
+     * Creates new form NewJFrame
      */
-    public Ex03() {
+    public NewJFrame() {
         initComponents();
     }
 
@@ -27,96 +27,93 @@ public class Ex03 extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButton2 = new javax.swing.JButton();
-        lblTabuada = new javax.swing.JLabel();
         lblNum = new javax.swing.JLabel();
-        txtNum = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
-        txtN1 = new javax.swing.JTextField();
-        jLabel2 = new javax.swing.JLabel();
-        txtN2 = new javax.swing.JTextField();
-        jLabel3 = new javax.swing.JLabel();
-        txtN3 = new javax.swing.JTextField();
-        jLabel4 = new javax.swing.JLabel();
-        txtN4 = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
-        txtN5 = new javax.swing.JTextField();
-        jLabel6 = new javax.swing.JLabel();
-        txtN6 = new javax.swing.JTextField();
-        jLabel7 = new javax.swing.JLabel();
-        txtN7 = new javax.swing.JTextField();
-        jLabel8 = new javax.swing.JLabel();
-        txtN8 = new javax.swing.JTextField();
-        jLabel9 = new javax.swing.JLabel();
-        txtN9 = new javax.swing.JTextField();
-        jLabel10 = new javax.swing.JLabel();
         txtN10 = new javax.swing.JTextField();
-
-        jButton2.setText("jButton2");
+        txtNum = new javax.swing.JTextField();
+        txtN5 = new javax.swing.JTextField();
+        jButton1 = new javax.swing.JButton();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        txtN6 = new javax.swing.JTextField();
+        txtN1 = new javax.swing.JTextField();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        txtN7 = new javax.swing.JTextField();
+        txtN2 = new javax.swing.JTextField();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        txtN8 = new javax.swing.JTextField();
+        txtN3 = new javax.swing.JTextField();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        txtN9 = new javax.swing.JTextField();
+        lblTabuada = new javax.swing.JLabel();
+        txtN4 = new javax.swing.JTextField();
+        jLabel10 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        lblTabuada.setFont(new java.awt.Font("Inter", 0, 18)); // NOI18N
-        lblTabuada.setText("Tabuada");
-
         lblNum.setText("Digite um numeral:");
 
-        jButton1.setText("Calcular");
-        jButton1.addActionListener(this::jButton1ActionPerformed);
-
-        jLabel1.setText("1 =");
-
-        txtN1.setText("N x 1");
-        txtN1.setEnabled(false);
-        txtN1.addActionListener(this::txtN1ActionPerformed);
-
-        jLabel2.setText("2 =");
-
-        txtN2.setText("N x 2");
-        txtN2.setEnabled(false);
-
-        jLabel3.setText("3 =");
-
-        txtN3.setText("N x 3");
-        txtN3.setEnabled(false);
-
-        jLabel4.setText("4 =");
-
-        txtN4.setText("N x 4");
-        txtN4.setEnabled(false);
-
         jLabel5.setText("5 =");
+
+        txtN10.setText("N x 7");
+        txtN10.setEnabled(false);
 
         txtN5.setText("N x 5");
         txtN5.setToolTipText("");
         txtN5.setEnabled(false);
 
+        jButton1.setText("Calcular");
+        jButton1.addActionListener(this::jButton1ActionPerformed);
+
         jLabel6.setText("8 =");
+
+        jLabel1.setText("1 =");
 
         txtN6.setText(" N x 8");
         txtN6.setEnabled(false);
 
+        txtN1.setText("N x 1");
+        txtN1.setEnabled(false);
+        txtN1.addActionListener(this::txtN1ActionPerformed);
+
         jLabel7.setText("9 =");
+
+        jLabel2.setText("2 =");
 
         txtN7.setText("N x 9");
         txtN7.setEnabled(false);
 
+        txtN2.setText("N x 2");
+        txtN2.setEnabled(false);
+
         jLabel8.setText("10 =");
+
+        jLabel3.setText("3 =");
 
         txtN8.setText("N x 10");
         txtN8.setEnabled(false);
 
+        txtN3.setText("N x 3");
+        txtN3.setEnabled(false);
+
         jLabel9.setText("6 =");
+
+        jLabel4.setText("4 =");
 
         txtN9.setText(" N x 6");
         txtN9.setEnabled(false);
         txtN9.addActionListener(this::txtN9ActionPerformed);
 
-        jLabel10.setText("7 =");
+        lblTabuada.setFont(new java.awt.Font("Inter", 0, 18)); // NOI18N
+        lblTabuada.setText("Tabuada");
 
-        txtN10.setText("N x 7");
-        txtN10.setEnabled(false);
+        txtN4.setText("N x 4");
+        txtN4.setEnabled(false);
+
+        jLabel10.setText("7 =");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -246,10 +243,10 @@ public class Ex03 extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        
+
         int N = Integer.parseInt(txtNum.getText());
         int i = 1;
-        
+
         txtN1.setText(String.valueOf(N*i));
         i++;
         txtN2.setText(String.valueOf(N*i));
@@ -269,17 +266,17 @@ public class Ex03 extends javax.swing.JFrame {
         txtN9.setText(String.valueOf(N*i));
         i++;
         txtN10.setText(String.valueOf(N*i));
-        
+
         txtNum.setText("");
     }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void txtN9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtN9ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtN9ActionPerformed
 
     private void txtN1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtN1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtN1ActionPerformed
+
+    private void txtN9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtN9ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtN9ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -303,12 +300,11 @@ public class Ex03 extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> new Ex03().setVisible(true));
+        java.awt.EventQueue.invokeLater(() -> new NewJFrame().setVisible(true));
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;

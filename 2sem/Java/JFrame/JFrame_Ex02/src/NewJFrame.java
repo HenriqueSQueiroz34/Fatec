@@ -7,14 +7,14 @@
  *
  * @author henrique
  */
-public class Ex02 extends javax.swing.JFrame {
+public class NewJFrame extends javax.swing.JFrame {
     
-    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(Ex02.class.getName());
+    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(NewJFrame.class.getName());
 
     /**
-     * Creates new form Ex02
+     * Creates new form NewJFrame
      */
-    public Ex02() {
+    public NewJFrame() {
         initComponents();
     }
 
@@ -27,13 +27,19 @@ public class Ex02 extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        txtNum = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         txtN = new javax.swing.JTextField();
-        txtNum = new javax.swing.JTextField();
-        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        txtNum.setText("Resultado");
+        txtNum.setEnabled(false);
+        txtNum.addActionListener(this::txtNumActionPerformed);
+
+        jLabel2.setText("Digite um valor para N:");
 
         jLabel1.setFont(new java.awt.Font("Inter", 0, 18)); // NOI18N
         jLabel1.setText("Fatorial");
@@ -43,12 +49,6 @@ public class Ex02 extends javax.swing.JFrame {
 
         txtN.setText("<Insira N>");
         txtN.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-
-        txtNum.setText("Resultado");
-        txtNum.setEnabled(false);
-        txtNum.addActionListener(this::txtNumActionPerformed);
-
-        jLabel2.setText("Digite um valor para N:");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -68,7 +68,7 @@ public class Ex02 extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(123, 123, 123)
                         .addComponent(jLabel1)))
-                .addContainerGap(12, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -83,26 +83,25 @@ public class Ex02 extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1)
                     .addComponent(txtNum, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(17, Short.MAX_VALUE))
+                .addContainerGap(15, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-        
-        int N = Integer.parseInt(txtN.getText());
-        
-        txtNum.setText(String.valueOf(Fatorial(N)));
-        
-        txtN.setText("");
-
-    }//GEN-LAST:event_jButton1ActionPerformed
-
     private void txtNumActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNumActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtNumActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+
+        int N = Integer.parseInt(txtN.getText());
+
+        txtNum.setText(String.valueOf(Fatorial(N)));
+
+        txtN.setText("");
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -126,7 +125,7 @@ public class Ex02 extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> new Ex02().setVisible(true));
+        java.awt.EventQueue.invokeLater(() -> new NewJFrame().setVisible(true));
     }
     
     static int Fatorial (int n){
