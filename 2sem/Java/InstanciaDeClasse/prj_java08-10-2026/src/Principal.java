@@ -9,23 +9,26 @@ public class Principal {
             cidade[i] = new Cidade();
         }
         
-        int opc = Integer.parseInt(JOptionPane.showInputDialog
+        int opc=0;
+        
+        while (opc != 9){
+            
+            opc = Integer.parseInt(JOptionPane.showInputDialog
             ("Estatísticas de cidades em 2020\n1- Cadastro Estatísticas\n2- Consulta por quantidade de acidentes"
                     + "\n3- Consulta por estatísticas de acidentes\n4- Acidentes acima da média das 10 cidades"
                     + "\n9- Fim do Programa"));
-        
-        while (opc != 9){
+            
             switch (opc){
-                case 1: m.Registra(cidade);
+                case 1: m.FCadastraEstatistica(cidade);
                     break;
                     
-                case 2: m.Acidentes(cidade);
+                case 2: m.PQtdAcidentes(cidade);
                     break;
                     
-                case 3:
+                case 3: m.PMaiorMenor(cidade);
                     break;
                     
-                case 4:
+                case 4: m.PAcima(cidade);
                     break;
                     
                 case 9: JOptionPane.showMessageDialog(null,"O programa foi finalizado.");
