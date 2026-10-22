@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário</title>
+</head>
+<body>
+    <h1>Formulário de Contato</h1>
+    <!-- Iniciando um formulário -->
+    <form action="endereco" method="post">
+        <label for="nome">Nome:</label>
+        <input type="text" name="nome" id="nome" required>
+
+        <p></p>
+        <label for="senha">Senha:</label>
+        <input type="password" name="senha" id="senha" required>
+
+        <p></p>
+        <label for="email">E-mail:</label>
+        <input type="email" name="email" id="email">
+
+        <p></p>
+        <label for="manha">Manhã</label>
+        <input type="radio" name="periodo" id="manha" value="manha">
+        <br>
+        <label for="tarde">Tarde</label>
+        <input type="radio" name="periodo" id="tarde" value="tarde" checked>
+        <br>
+        <label for="noite">Noite</label>
+        <input type="radio" name="periodo" id="noite" value="noite">
+
+        <p></p>
+        <label for="aceita">Aceito os termos</label>
+        <input type="checkbox" name="aceita" id="aceita" value="sim">
+
+        <p>Quais cursos você deseja fazer?</p>
+        <label for="html">HTML</label>
+        <input type="checkbox" name="cursos" id="html" value="html">
+        <br>
+        <label for="css">CSS</label>
+        <input type="checkbox" name="cursos" id="css" value="css">
+        <br>
+        <label for="javascript">Javascript</label>
+        <input type="checkbox" name="cursos" id="javascript" value="javascript">
+        
+        <p></p>
+        <label for="cidade">Cidade</label>
+        <select name="cidade" id="cidade" required>
+            <option value="" selected disabled>Selecione uma cidade</option>
+            <option value="sao-paulo">São Paulo</option>
+            <option value="rio-de-janeiro">Rio de Janeiro</option>
+            <option value="curitiba">curitiba</option>
+        </select>
+
+        <p></p>
+        <label for="mensagem">Mensagem:</label>
+        <textarea name="mensagem" id="mensagem" rows="5" cols="40"></textarea>
+
+        <p></p>
+        <button type="submit">Enviar</button>
+
+        <button type="reset">Apagar tudo</button>
+    </form>
+</body>
+</html>

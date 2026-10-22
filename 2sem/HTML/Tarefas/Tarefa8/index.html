@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet Shop Amigo Animal - Contato</title>
+</head>
+<body>
+    <h1>Pet Shop Amigo Animal</h1>
+    <h2>Formulário de Contato</h2>
+
+    <form action="">
+        <label for="nome">Nome do Cliente:</label>
+        <input type="text" name="nome" id="nome">
+
+        <p></p>
+        <label for="email">E-mail:</label>
+        <input type="email" name="email" id="email" required>
+
+        <p>Período de preferência:</p>
+        <input type="radio" name="periodo" id="manha" value="manha">
+        <label for="manha">Manhã</label>
+        <br>
+        <input type="radio" name="periodo" id="tarde" value="tarde">
+        <label for="tarde">Tarde</label>
+        <br>
+        <input type="radio" name="periodo" id="noite" value="noite">
+        <label for="noite">Noite</label>
+
+        <p>Serviços de interesse:</p>
+        <input type="checkbox" name="servicos" id="banho" value="banho">
+        <label for="banho">Banho</label>
+        <br>
+        <input type="checkbox" name="servicos" id="tosa" value="tosa">
+        <label for="tosa">Tosa</label>
+        <br>
+        <input type="checkbox" name="servicos" id="veterinario" value="veterinario">
+        <label for="veterinario">Atendimento veterinário</label>
+
+        <p>
+            <label for="animal">Tipo de animal:</label>
+            <select name="animal" id="animal">
+                <option value="cao">Cão</option>
+                <option value="gato">Gato</option>
+                <option value="outro">Outro</option>
+            </select>
+        </p>
+
+        <p>
+            <label for="pet">Nome do pet:</label>
+            <input type="text" name="pet" id="pet" required>
+        </p>
+
+        <p>
+            <label for="mensagem">Mensagem:</label>
+        </p>
+        <textarea name="mensagem" id="mensagem" rows="5" cols="40"></textarea>
+
+        <p>
+            <button type="submit">Enviar solicitação</button>
+            <button type="reset">Limpar campos</button>
+        </p>
+    </form>
+</body>
+</html>
