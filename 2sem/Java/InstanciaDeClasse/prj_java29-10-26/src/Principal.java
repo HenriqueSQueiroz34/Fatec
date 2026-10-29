@@ -4,7 +4,7 @@ import javax.swing.JOptionPane;
 public class Principal {
     public static void main(String args[]) throws IOException{
         Votacao[] votos = new Votacao[200];
-        Methods m = new Methods();
+        MethodsVotos m = new MethodsVotos();
         
         for (int i=0;i<200;i++){
             votos[i] = new Votacao();
@@ -30,9 +30,11 @@ public class Principal {
                     break;
                     
                 case 3:
+                    m.FGravaVotacao(votos);
                     break;
                     
                 case 4:
+                    m.Indicadores(votos);
                     break;
             }
         }
