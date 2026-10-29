@@ -12,7 +12,7 @@ public class Methods{
         
         for (i=0;i<10;i++){
             cidade[i].codCid = Integer.parseInt(JOptionPane.showInputDialog("Informe o código da cidade "+(i+1)+": "));
-            cidade[i].nomeCid = JOptionPane.showInputDialog("Qual o nome da cidade? ");
+            cidade[i].nomeCid = JOptionPane.showInputDialog("Qual o nome da cidade "+(i+1)+"?");
             cidade[i].acid = Integer.parseInt(JOptionPane.showInputDialog("Quantos acidentes aconteceram no ano passado? "));
         
             // gravando no arquivo final
@@ -21,7 +21,6 @@ public class Methods{
             grava.write(cidade[i].nomeCid);
             grava.newLine();
             grava.write(Integer.toString(cidade[i].acid));
-            grava.newLine();
             grava.newLine();
         }
         
@@ -37,11 +36,10 @@ public class Methods{
                 
         for (i=0;i<10;i++){
             
-            //lendo o arquivo (vazio é para linhas em branco)
-            cidade[i].acid = Integer.parseInt(leitura.readLine());
+            //lendo o arquivo
+            cidade[i].codCid = Integer.parseInt(leitura.readLine());
             cidade[i].nomeCid = leitura.readLine();
             cidade[i].acid = Integer.parseInt(leitura.readLine());
-            String vazio = leitura.readLine();
             
             if (cidade[i].acid > 100 && cidade[i].acid < 500){
                 acidentes += Integer.toString(cidade[i].codCid) + ": ";
@@ -58,10 +56,17 @@ public class Methods{
     }
     
     // menor e maior num de acidentes
-    public void PMaiorMenor(Cidade[] cidade) throws IOException{ 
+    public void PMaiorMenor(Cidade[] cidade) throws IOException{
+        BufferedReader leitura = new BufferedReader(new FileReader(file));
+        
         int men=0,mai=0;
         
         for (i=0;i<10;i++){
+            
+            //lendo o arquivo
+            cidade[i].codCid = Integer.parseInt(leitura.readLine());
+            cidade[i].nomeCid = leitura.readLine();
+            cidade[i].acid = Integer.parseInt(leitura.readLine());
             
             if (i==0){
                 men=cidade[i].acid;
@@ -73,12 +78,20 @@ public class Methods{
         }
         
         System.out.println("Quantidade de acidentes\nMaior: "+mai+"\nMenor: "+men);
+        leitura.close();
     }
     
     public void PAcima(Cidade[] cidade) throws IOException{
+        BufferedReader leitura = new BufferedReader(new FileReader(file));
+        
         float media = 0;
         
         for (int i=0;i<10;i++){
+            //lendo o arquivo
+            cidade[i].codCid = Integer.parseInt(leitura.readLine());
+            cidade[i].nomeCid = leitura.readLine();
+            cidade[i].acid = Integer.parseInt(leitura.readLine());
+            
             media += cidade[i].acid;
         }
         
@@ -89,8 +102,10 @@ public class Methods{
         
         for (int i=0;i<10;i++){
             if (cidade[i].acid > media){
-                System.out.println(cidade[i].nomeCid);
+                System.out.println(cidade[i].nomeCid+": "+cidade[i].acid);
             }
         }
+        
+        leitura.close();
     }
 }
