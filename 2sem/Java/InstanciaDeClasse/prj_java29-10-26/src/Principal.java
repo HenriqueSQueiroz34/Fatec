@@ -4,7 +4,7 @@ import javax.swing.JOptionPane;
 public class Principal {
     public static void main(String args[]) throws IOException{
         Votacao[] votos = new Votacao[200];
-        MethodsVotos m = new MethodsVotos();
+        Methods m = new Methods();
         
         for (int i=0;i<200;i++){
             votos[i] = new Votacao();
