@@ -1,3 +1,4 @@
+import java.io.*;
 import javax.swing.*;
 public class Methods {
     // Todos os methods recebem a lista
@@ -66,5 +67,9 @@ public class Methods {
                 System.out.println(cidade[i].nomeCid);
             }
         }
+    }
+    
+    public void Arquivo(Cidade[] cidade)throws IOException{
+        
     }
 }

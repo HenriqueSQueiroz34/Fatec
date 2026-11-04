@@ -1,6 +1,7 @@
+import java.io.*;
 import javax.swing.*;
-public class Principal {
-    public static void main (String args[]){
+public class Principal{
+    public static void main (String args[]) throws IOException{
         Cidade[] cidade = new Cidade[10]; // faz a classe ser entendida como vetor
         Methods m = new Methods();
         
@@ -16,7 +17,7 @@ public class Principal {
             opc = Integer.parseInt(JOptionPane.showInputDialog
             ("Estatísticas de cidades em 2020\n1- Cadastro Estatísticas\n2- Consulta por quantidade de acidentes"
                     + "\n3- Consulta por estatísticas de acidentes\n4- Acidentes acima da média das 10 cidades"
-                    + "\n9- Fim do Programa"));
+                    + "5- Registrar em arquivo\n9- Fim do Programa"));
             
             switch (opc){
                 case 1: m.FCadastraEstatistica(cidade);
@@ -29,6 +30,9 @@ public class Principal {
                     break;
                     
                 case 4: m.PAcima(cidade);
+                    break;
+                    
+                case 5: m.Arquivo(cidade);
                     break;
                     
                 case 9: JOptionPane.showMessageDialog(null,"O programa foi finalizado.");
