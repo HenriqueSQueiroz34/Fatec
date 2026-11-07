@@ -20,21 +20,20 @@ public class Methods {
             
             // Numero Eleitor
             for (int a=0;a<e.length;a++){
-                if (e[i].numero == e[a].numero){
-                    System.out.print("Número de Eleitor já existe.");
+                if (e[i].numero == e[a].numero && a != 0){
                     num=true;
                 }
             }
             
             if (num){
                 do{
+                    System.out.print("Número de Eleitor já existe.");
                     e[i].numero = Integer.parseInt(JOptionPane.showInputDialog("Informe um Número de Eleitor válido:"));
-                    for (int a=0;a<secoes.length;a++){
-                        if(e[i].numero == secoes[a]){
+                    for (int a=0;a<e.length;a++){
+                        if(e[i].numero != e[a].numero && a != 0){
                             num=false;
                         }
                     }
-                    
                 } while(!num);
             }
             
@@ -91,11 +90,6 @@ public class Methods {
     }
     
     public void Agrupar() throws IOException{
-        /*
-            Ordenar os eleitores em ordem (talvez a partir do voto) em cada arquivo
-            Menu das Estatísticas
-        */
-        
         String agrupado = "Agrupado.txt";
         String votac1 = "Votacao1.txt";
         String votac2 = "Votacao2.txt";
@@ -103,18 +97,87 @@ public class Methods {
         BufferedReader leitor1 = new BufferedReader(new FileReader(votac1));
         BufferedReader leitor2 = new BufferedReader(new FileReader(votac2));
         
-        // Entender de qual classe tem q instanciar
         Votacao[] v1 = new Votacao[5];
         Votacao[] v2 = new Votacao[5];
+        Votacao[] aux = new Votacao[1];
         
-        // Leitura
+        aux[0] = new Votacao();
+        
         for (int i=0;i<5;i++){
+            v1[i] = new Votacao();
+            v2[i] = new Votacao();
             
+            v1[i].numero = Integer.parseInt(leitor1.readLine());
+            v1[i].nome = leitor1.readLine();
+            v1[i].cand = Integer.parseInt(leitor1.readLine());
+            v1[i].secao = Integer.parseInt(leitor1.readLine());
+            
+            v2[i].numero = Integer.parseInt(leitor2.readLine());
+            v2[i].nome = leitor2.readLine();
+            v2[i].cand = Integer.parseInt(leitor2.readLine());
+            v2[i].secao = Integer.parseInt(leitor2.readLine());
         }
         
-        // Gravação
-        for (int i=0;i<10;i++){
-            
+        // Ordenação
+        for (int i=0;i<5;i++){
+            for (int a=i+1;a<5;a++){
+                if (v1[i].numero > v1[a].numero){
+                    aux[0].numero = v1[i].numero;
+                    aux[0].nome = v1[i].nome;
+                    aux[0].cand = v1[i].cand;
+                    aux[0].secao = v1[i].secao;
+                    
+                    v1[i].numero = v1[a].numero;
+                    v1[i].nome = v1[a].nome;
+                    v1[i].cand = v1[a].cand;
+                    v1[i].secao = v1[a].secao;
+                    
+                    v1[a].numero = aux[0].numero;
+                    v1[a].nome = aux[0].nome;
+                    v1[a].cand = aux[0].cand;
+                    v1[a].secao = aux[0].secao;
+                }
+                
+                if (v2[i].numero > v2[a].numero){
+                    aux[0].numero = v2[i].numero;
+                    aux[0].nome = v2[i].nome;
+                    aux[0].cand = v2[i].cand;
+                    aux[0].secao = v2[i].secao;
+                    
+                    v2[i].numero = v2[a].numero;
+                    v2[i].nome = v2[a].nome;
+                    v2[i].cand = v2[a].cand;
+                    v2[i].secao = v2[a].secao;
+                    
+                    v2[a].numero = aux[0].numero;
+                    v2[a].nome = aux[0].nome;
+                    v2[a].cand = aux[0].cand;
+                    v2[a].secao = aux[0].secao;
+                }
+            }
+        }
+        
+        // Inserir no arquivo conjunto com merge sort
+        
+        for (int i=0;i<v1.length;i++){
+            for (int a=0;a<i;a++){
+                if (v1[i].cand > v2[a].cand){
+                    grava.write(v2[a].numero);
+                    grava.newLine();
+                    grava.write(v2[a].cand);
+                    grava.newLine();
+                    grava.write(v2[a].secao);
+                    grava.newLine();
+                }
+                else{
+                    grava.write(v1[i].numero);
+                    grava.newLine();
+                    grava.write(v1[i].cand);
+                    grava.newLine();
+                    grava.write(v1[i].secao);
+                    grava.newLine();
+                }
+            }
         }
     }
     
@@ -129,7 +192,7 @@ public class Methods {
                     v1++;
                 } else{
                     System.out.println("A Votação 1 não aceita mais Eleitores (1, 3, 4).");
-                    tem=false;
+                    sec=false;
                 }
             break;
 
@@ -138,11 +201,11 @@ public class Methods {
                     v2++;
                 } else{
                     System.out.println("A Votação 2 não aceita mais Eleitores (5, 9, 10).");
-                    tem=false;
+                    sec=false;
                 }
             break;
             
-            default: tem=false;
+            default: sec=false;
             break;
         }
     }

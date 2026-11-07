@@ -32,7 +32,7 @@ public class Votacao {
                         v[vot].nome = e[i].nome;
                         v[vot].numero = e[i].numero;
                         v[vot].cand = Integer.parseInt(JOptionPane.showInputDialog(
-                                                    "Candidato "+v[vot].numero+". Selecione o candidato:\n"
+                                                    "Eleitor "+v[vot].numero+". Selecione o candidato:\n"
                                                     + "1- José\n"
                                                     + "2- Maria\n"
                                                     + "3- Branco\n"
@@ -76,7 +76,7 @@ public class Votacao {
                         v[vot].nome = e[i].nome;
                         v[vot].numero = e[i].numero;
                         v[vot].cand = Integer.parseInt(JOptionPane.showInputDialog(
-                                                    "Candidato "+v[vot].numero+". Selecione o candidato:\n"
+                                                    "Eleitor "+v[vot].numero+". Selecione o candidato:\n"
                                                     + "1- José\n"
                                                     + "2- Maria\n"
                                                     + "3- Branco\n"
