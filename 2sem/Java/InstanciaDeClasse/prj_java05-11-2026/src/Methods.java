@@ -4,17 +4,21 @@ public class Methods {
         int[] secoes = {1,3,4,5,9,10};
         
         for (int i=0;i<10;i++){
+            int v1=0;
+            int v2=0;
             boolean tem=false; // Validador da Seção
             
             e[i].nome = JOptionPane.showInputDialog("Informe o nome do Eleitor "+(i+1)+":");
             e[i].numero = Integer.parseInt(JOptionPane.showInputDialog("Dê o número do Eleitor "+(i+1)+":"));
-            e[i].secao = Integer.parseInt(JOptionPane.showInputDialog("\"Dê a seção do Eleitor "+(i+1)+" entre\n"
+            e[i].secao = Integer.parseInt(JOptionPane.showInputDialog("Dê a seção do Eleitor "+(i+1)+" entre\n"
                                                                     + "1,3,4,5,9 ou 10:"));
             for (int a=0;a<secoes.length;a++){
                 if(e[i].secao == secoes[a]){
                     tem=true;
                 }
             }
+            
+            AreaVotacao(e[i].secao,v1,v2,tem);
             
             if (!tem){
             System.out.println("Informe uma seção válida.");
@@ -26,11 +30,14 @@ public class Methods {
                             tem=true;
                         }
                     }
+                    
+                    if (tem){
+                        AreaVotacao(e[i].secao,v1,v2,tem);
+                    }
                 } while(!tem);
             }
-            System.out.printf("Eleitor %d cadastrado.\n",i+1);
             
-            // Verificar limite de 5 eleitores por Votação
+            System.out.printf("Eleitor %d cadastrado.\n",i+1);
         }
         return e;
     }
@@ -58,5 +65,27 @@ public class Methods {
     
     public void Estatistica(){
         
+    }
+    
+    public void AreaVotacao(int e,int v1,int v2,boolean t){
+        switch(e){
+            case 1,3,4:
+                if(v1 < 5){
+                    v1++;
+                } else{
+                    System.out.println("A Votação 1 não aceita mais Eleitores (1, 3, 4).");
+                    t=false;
+                }
+            break;
+
+            case 5,9,10: 
+                if(v2 < 5){
+                    v2++;
+                } else{
+                    System.out.println("A Votação 2 não aceita mais Eleitores (5, 9, 10).");
+                    t=false;
+                }
+            break;
+        }
     }
 }
