@@ -20,7 +20,7 @@ public class Methods {
             
             // Numero Eleitor
             for (int a=0;a<e.length;a++){
-                if (e[i].numero == e[a].numero && a != 0){
+                if (e[i].numero == e[a].numero){
                     num=true;
                 }
             }
@@ -164,6 +164,8 @@ public class Methods {
                 if (v1[i].cand > v2[a].cand){
                     grava.write(v2[a].numero);
                     grava.newLine();
+                    grava.write(v2[a].nome);
+                    grava.newLine();
                     grava.write(v2[a].cand);
                     grava.newLine();
                     grava.write(v2[a].secao);
@@ -171,6 +173,8 @@ public class Methods {
                 }
                 else{
                     grava.write(v1[i].numero);
+                    grava.newLine();
+                    grava.write(v1[a].nome);
                     grava.newLine();
                     grava.write(v1[i].cand);
                     grava.newLine();

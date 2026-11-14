@@ -101,7 +101,6 @@ public class Indicadores {
         
         for(int i=0;i<300;i++){
             candidatos[i] = new Votacao();
-            candidatos[i].secao = 0;
         }
         
         for (int a=0;a<300;a++){
