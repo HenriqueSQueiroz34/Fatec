@@ -24,7 +24,7 @@ public class Methods {
                     num=true;
                 }
             }
-            
+            /*
             if (num){
                 do{
                     System.out.print("Número de Eleitor já existe.");
@@ -35,7 +35,7 @@ public class Methods {
                         }
                     }
                 } while(!num);
-            }
+            }*/
             
             // Seção
             for (int a=0;a<secoes.length;a++){
