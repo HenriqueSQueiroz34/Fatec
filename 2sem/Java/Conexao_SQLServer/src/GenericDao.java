@@ -10,7 +10,7 @@ public class GenericDao {
     
     public Connection getConn() throws ClassNotFoundException, SQLException{
         String host = "localhost"; // IP máquina do server
-        String dbName = "Clinica"; // DB name
+        String dbName = "Delivery"; // DB name
         String user = "sa"; // Username
         String senha = "T*e33l555ef33333"; // Senha do User
         
@@ -19,7 +19,7 @@ public class GenericDao {
         // String da Conexão
         c = DriverManager.getConnection(
                 String.format("jdbc:jtds:sqlserver://%s:1433;databaseName=%s;"
-                        + "user=%s;password:%s;", host,dbName,user,senha));
+                        + "encrypt=true;trustServerCertificate=true;user=%s;password:%s;", host,dbName,user,senha));
         
         return c;
     }
