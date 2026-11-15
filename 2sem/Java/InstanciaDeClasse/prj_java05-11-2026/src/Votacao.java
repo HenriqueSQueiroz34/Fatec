@@ -1,17 +1,22 @@
 import java.io.*;
 import javax.swing.*;
 public class Votacao {
-    int[] candidatos = {1,2,3,4};
     
     int numero;
     String nome;
     int cand;
     int secao;
     
-    public void V1(Eleitor[] e) throws IOException{
+    void Votacao(){
+        this.numero = 0;
+        this.nome = "";
+        this.cand = 0;
+        this.secao = 0;
+    }
+    
+    public int[] V1(Eleitor[] e, int[] c) throws IOException{
         String arquivo = "Votacao1.txt";
         BufferedWriter grava = new BufferedWriter(new FileWriter(arquivo));
-        int vot=0;
         
         for (int i=0;i<10;i++){
             switch(e[i].secao){
@@ -34,19 +39,19 @@ public class Votacao {
                     grava.write(Integer.toString(e[i].secao));
                     grava.newLine();
                     
-                    vot++;
+                    c[cand-1]++;
                 break;
                 
                 default:
                 break;
             }
         }
+        return c;
     }
     
-    public void V2(Eleitor[] e) throws IOException{
+    public int[] V2(Eleitor[] e, int[] c) throws IOException{
         String arquivo = "Votacao2.txt";
         BufferedWriter grava = new BufferedWriter(new FileWriter(arquivo));
-        int vot=0;
         
         for (int i=0;i<10;i++){
             switch(e[i].secao){
@@ -69,12 +74,13 @@ public class Votacao {
                     grava.write(Integer.toString(e[i].secao));
                     grava.newLine();
                     
-                    vot++;
+                    c[cand-1]++;
                 break;
                 
                 default:
                 break;
             }
         }
+        return c;
     }
 }

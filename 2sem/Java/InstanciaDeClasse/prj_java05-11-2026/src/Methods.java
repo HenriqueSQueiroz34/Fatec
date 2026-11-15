@@ -1,12 +1,18 @@
 import java.io.*;
 import javax.swing.*;
 public class Methods {
+    int[] candidatos = new int[4];
     
     int v1=0;
     int v2=0;
     boolean sec=false; // Validador da Seção
     boolean num=false; // Número de Eleitor repetido
 
+    void Candidatos(){
+        for (int i=0;i<candidatos.length;i++){
+            candidatos[i] = 0;
+        }
+    }
     
     public Eleitor[] Eleitores(Eleitor[] e){
         int[] secoes = {1,3,4,5,9,10};
@@ -70,6 +76,8 @@ public class Methods {
     }
     
     public void Votacoes(Eleitor[] e) throws IOException{
+        Candidatos();
+        
         Votacao vota = new Votacao();
         int opc=0;
         
@@ -80,9 +88,9 @@ public class Methods {
                                                              + "9- Fim"));
             
             switch(opc){
-                case 1: vota.V1(e);
+                case 1: vota.V1(e,candidatos);
                 break;
-                case 2: vota.V2(e);
+                case 2: vota.V2(e,candidatos);
             }
         }while (opc!=9);
         
