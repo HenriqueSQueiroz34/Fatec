@@ -22,7 +22,7 @@ public class Principal {
                 case 2: m.Votacoes(e);
                 break;
                 
-                case 3: m.Agrupar();
+                case 3: m.Agrupar(e);
                 break;
                 
                 case 4: m.Estatistica();

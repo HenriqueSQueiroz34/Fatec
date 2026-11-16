@@ -1,20 +1,16 @@
 import java.io.*;
 import javax.swing.*;
 public class Votacao {
+    Votos[] v = new Votos[10];
     
-    int numero;
-    String nome;
-    int cand;
-    int secao;
-    
-    void Votacao(){
-        this.numero = 0;
-        this.nome = "";
-        this.cand = 0;
-        this.secao = 0;
+    void Reset(){
+        for (int i=0;i<v.length;i++){
+            v[i] = new Votos();
+        }
     }
     
     public int[] V1(Eleitor[] e, int[] c) throws IOException{
+        Reset();
         String arquivo = "Votacao1.txt";
         BufferedWriter grava = new BufferedWriter(new FileWriter(arquivo));
         
@@ -22,24 +18,24 @@ public class Votacao {
             switch(e[i].secao){
                 case 1,3,4:
                     do{
-                        cand = Integer.parseInt(JOptionPane.showInputDialog(
+                        v[i].cand = Integer.parseInt(JOptionPane.showInputDialog(
                                                     "Eleitor "+e[i].numero+". Selecione o candidato:\n"
                                                     + "1- José\n"
                                                     + "2- Maria\n"
                                                     + "3- Branco\n"
                                                     + "4- Nulo"));
-                    } while (cand < 1 || cand > 4);
+                    } while (v[i].cand < 1 || v[i].cand > 4);
                     
                     grava.write(Integer.toString(e[i].numero));
                     grava.newLine();
                     grava.write(e[i].nome);
                     grava.newLine();
-                    grava.write(Integer.toString(cand));
+                    grava.write(Integer.toString(v[i].cand));
                     grava.newLine();
                     grava.write(Integer.toString(e[i].secao));
                     grava.newLine();
                     
-                    c[cand-1]++;
+                    c[v[i].cand-1]++;
                 break;
                 
                 default:
@@ -50,6 +46,7 @@ public class Votacao {
     }
     
     public int[] V2(Eleitor[] e, int[] c) throws IOException{
+        Reset();
         String arquivo = "Votacao2.txt";
         BufferedWriter grava = new BufferedWriter(new FileWriter(arquivo));
         
@@ -57,24 +54,24 @@ public class Votacao {
             switch(e[i].secao){
                 case 5,9,10:
                     do{
-                        cand = Integer.parseInt(JOptionPane.showInputDialog(
+                        v[i].cand = Integer.parseInt(JOptionPane.showInputDialog(
                                                     "Eleitor "+e[i].numero+". Selecione o candidato:\n"
                                                     + "1- José\n"
                                                     + "2- Maria\n"
                                                     + "3- Branco\n"
                                                     + "4- Nulo"));
-                    } while (cand < 1 || cand > 4);
+                    } while (v[i].cand < 1 || v[i].cand > 4);
                     
                     grava.write(Integer.toString(e[i].numero));
                     grava.newLine();
                     grava.write(e[i].nome);
                     grava.newLine();
-                    grava.write(Integer.toString(cand));
+                    grava.write(Integer.toString(v[i].cand));
                     grava.newLine();
                     grava.write(Integer.toString(e[i].secao));
                     grava.newLine();
                     
-                    c[cand-1]++;
+                    c[v[i].cand-1]++;
                 break;
                 
                 default:

@@ -1,3 +1,4 @@
+import java.util.Random; // temporário
 import java.io.*;
 import javax.swing.*;
 public class Methods {
@@ -15,14 +16,15 @@ public class Methods {
     }
     
     public Eleitor[] Eleitores(Eleitor[] e){
+        Random r = new Random();
         int[] secoes = {1,3,4,5,9,10};
         
         for (int i=0;i<e.length;i++){
                         
             e[i].nome = JOptionPane.showInputDialog("Informe o nome do Eleitor "+(i+1)+":");
-            e[i].numero = Integer.parseInt(JOptionPane.showInputDialog("Dê o número do Eleitor "+(i+1)+":"));
-            e[i].secao = Integer.parseInt(JOptionPane.showInputDialog("Dê a seção do Eleitor "+(i+1)+" entre\n"
-                                                                    + "1,3,4,5,9 ou 10:"));
+            e[i].numero = r.nextInt(1); // Integer.parseInt(JOptionPane.showInputDialog("Dê o número do Eleitor "+(i+1)+":"));
+            e[i].secao = r.nextInt(1,11); // Integer.parseInt(JOptionPane.showInputDialog("Dê a seção do Eleitor "+(i+1)+" entre\n"
+                                      //                              + "1,3,4,5,9 ou 10:"));
             
             // Numero Eleitor
             for (int a=0;a<e.length;a++){
@@ -97,33 +99,23 @@ public class Methods {
         System.out.println("Votação 1 e 2 registradas.");
     }
     
-    public void Agrupar() throws IOException{
+    public void Agrupar(Eleitor[] e) throws IOException{
         String agrupado = "Agrupado.txt";
         String votac1 = "Votacao1.txt";
         String votac2 = "Votacao2.txt";
         BufferedWriter grava = new BufferedWriter(new FileWriter(agrupado));
-        BufferedReader leitor1 = new BufferedReader(new FileReader(votac1));
-        BufferedReader leitor2 = new BufferedReader(new FileReader(votac2));
         
-        Votacao[] v1 = new Votacao[5];
-        Votacao[] v2 = new Votacao[5];
-        Votacao[] aux = new Votacao[1];
+        Votos[] v1 = new Votos[5];
+        Votos[] v2 = new Votos[5];
+        Votos[] aux = new Votos[1];
         
-        aux[0] = new Votacao();
+        aux[0] = new Votos();
         
         for (int i=0;i<5;i++){
-            v1[i] = new Votacao();
-            v2[i] = new Votacao();
+            v1[i] = new Votos();
+            v2[i] = new Votos();
             
-            v1[i].numero = Integer.parseInt(leitor1.readLine());
-            v1[i].nome = leitor1.readLine();
-            v1[i].cand = Integer.parseInt(leitor1.readLine());
-            v1[i].secao = Integer.parseInt(leitor1.readLine());
-            
-            v2[i].numero = Integer.parseInt(leitor2.readLine());
-            v2[i].nome = leitor2.readLine();
-            v2[i].cand = Integer.parseInt(leitor2.readLine());
-            v2[i].secao = Integer.parseInt(leitor2.readLine());
+            // Aplicar lógica para adicionar os valores de cada secão?
         }
         
         // Ordenação
