@@ -42,6 +42,7 @@ public class Votacao {
                 break;
             }
         }
+        grava.close();
         return c;
     }
     
@@ -78,6 +79,7 @@ public class Votacao {
                 break;
             }
         }
+        grava.close();
         return c;
     }
 }

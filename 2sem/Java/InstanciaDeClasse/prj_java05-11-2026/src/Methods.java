@@ -20,7 +20,8 @@ public class Methods {
         int[] secoes = {1,3,4,5,9,10};
         
         for (int i=0;i<e.length;i++){
-                        
+            
+            e[i].numero = r.nextInt(1,15);
             e[i].nome = JOptionPane.showInputDialog("Informe o nome do Eleitor "+(i+1)+":");
             e[i].numero = r.nextInt(1); // Integer.parseInt(JOptionPane.showInputDialog("Dê o número do Eleitor "+(i+1)+":"));
             e[i].secao = r.nextInt(1,11); // Integer.parseInt(JOptionPane.showInputDialog("Dê a seção do Eleitor "+(i+1)+" entre\n"
@@ -101,8 +102,6 @@ public class Methods {
     
     public void Agrupar(Eleitor[] e) throws IOException{
         String agrupado = "Agrupado.txt";
-        String votac1 = "Votacao1.txt";
-        String votac2 = "Votacao2.txt";
         BufferedWriter grava = new BufferedWriter(new FileWriter(agrupado));
         
         Votos[] v1 = new Votos[5];
@@ -122,63 +121,45 @@ public class Methods {
         for (int i=0;i<5;i++){
             for (int a=i+1;a<5;a++){
                 if (v1[i].numero > v1[a].numero){
-                    aux[0].numero = v1[i].numero;
-                    aux[0].nome = v1[i].nome;
-                    aux[0].cand = v1[i].cand;
-                    aux[0].secao = v1[i].secao;
+                    aux[0] = v1[i];
                     
-                    v1[i].numero = v1[a].numero;
-                    v1[i].nome = v1[a].nome;
-                    v1[i].cand = v1[a].cand;
-                    v1[i].secao = v1[a].secao;
+                    v1[i] = v1[a];
                     
-                    v1[a].numero = aux[0].numero;
-                    v1[a].nome = aux[0].nome;
-                    v1[a].cand = aux[0].cand;
-                    v1[a].secao = aux[0].secao;
+                    v1[a] = aux[0];
                 }
                 
                 if (v2[i].numero > v2[a].numero){
-                    aux[0].numero = v2[i].numero;
-                    aux[0].nome = v2[i].nome;
-                    aux[0].cand = v2[i].cand;
-                    aux[0].secao = v2[i].secao;
+                    aux[0] = v2[i];
                     
-                    v2[i].numero = v2[a].numero;
-                    v2[i].nome = v2[a].nome;
-                    v2[i].cand = v2[a].cand;
-                    v2[i].secao = v2[a].secao;
+                    v2[i] = v2[a];
                     
-                    v2[a].numero = aux[0].numero;
-                    v2[a].nome = aux[0].nome;
-                    v2[a].cand = aux[0].cand;
-                    v2[a].secao = aux[0].secao;
+                    v2[a] = aux[0];
                 }
             }
         }
         
         // Inserir no arquivo conjunto com merge sort
-        
-        for (int i=0;i<v1.length;i++){
-            for (int a=0;a<i;a++){
+        // o vetor ta nulo, corrige
+        for (int i=0;i<v1.length-1;i++){
+            for (int a=0;a<v1.length-1-i;a++){
                 if (v1[i].cand > v2[a].cand){
-                    grava.write(v2[a].numero);
+                    grava.write(Integer.toString(v2[a].numero));
                     grava.newLine();
                     grava.write(v2[a].nome);
                     grava.newLine();
-                    grava.write(v2[a].cand);
+                    grava.write(Integer.toString(v2[a].cand));
                     grava.newLine();
-                    grava.write(v2[a].secao);
+                    grava.write(Integer.toString(v2[a].secao));
                     grava.newLine();
                 }
                 else{
-                    grava.write(v1[i].numero);
+                    grava.write(Integer.toString(v1[a].numero));
                     grava.newLine();
                     grava.write(v1[a].nome);
                     grava.newLine();
-                    grava.write(v1[i].cand);
+                    grava.write(Integer.toString(v1[a].cand));
                     grava.newLine();
-                    grava.write(v1[i].secao);
+                    grava.write(Integer.toString(v1[a].secao));
                     grava.newLine();
                 }
             }
